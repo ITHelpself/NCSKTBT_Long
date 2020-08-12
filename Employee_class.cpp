@@ -7,7 +7,6 @@ class employee
        int id;
        char name[30];
        float salary;
-       float a;
     public:
         void getDetails(void);
         void putDetails(void);
@@ -21,17 +20,16 @@ void employee::getDetails(void)
     cin >> name;
     cout << "Enter salary: ";
     cin >> salary;
-    a = salary;
 }
 float employee::paySocialInsurance()
 {
-    
-    if(a < 5000000){
-        a = (a*1.3)/100;
+    float socialInsurance = 0;
+    if(salary < 5000000){
+        socialInsurance = (salary*1.3)/100;
     }else{ 
-        a = (a*1.5)/100;
+        socialInsurance = (salary*1.5)/100;
     }
-    return a;
+    return socialInsurance;
 }
 void employee::putDetails(void)
 {
